@@ -113,19 +113,19 @@ tips_dir='./tmall/data/tips/'
 def load_tips():
     ret = []
     for fl in os.listdir(tips_dir):
-        f = open(fl)
+        f = open(tips_dir + fl)
         tip_json = json.load(f)
         ret.extend(tip_json)
     return ret
 tips_data = load_tips()
 
 def get_tips():
-    return tips_data[0:5]
+    return tips_data[0:4]
 
 @app.route('/tips/')
 def tips():
     tips_to_show=get_tips()
-    return render_template('tips.html', sel=tips_to_show)
+    return render_template('tip.html', sel=tips_to_show)
 
 
 if __name__=='__main__':
