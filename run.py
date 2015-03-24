@@ -64,22 +64,27 @@ def rank_se(start, end):
 def index():
     #sel=[{'image_urls':'http://gi3.mlist.alicdn.com/bao/uploaded/i3/TB1hd4tHpXXXXXgXXXXXXXXXXXX_!!0-item_pic.jpg_b.jpg'}, {'image_urls':'http://gi3.mlist.alicdn.com/bao/uploaded/i3/TB1hd4tHpXXXXXgXXXXXXXXXXXX_!!0-item_pic.jpg_b.jpg'}]
     #return 'sa'
-    return render_template('index.html', sel=random_x(16));
+    try:
+        return render_template('index.html', sel=random_x(16));
+    except Exception, e:
+        return "Error."
 
 @app.route('/clothes/')
 def clothes():
-    
-    by_random = request.args.get('random')
-    if by_random == None or by_random == '1':
-        return render_template('show.html',sel=random_x(16))
-    else:
-        try:
-            start_page = int(request.args.get('page')) * 16 - 16
-        except Exception, e:
-            start_page = 0
-        if start_page < 0:
-            start_page = 0
-        return render_template('show.html', sel=rank_se(start_page, start_page + 16))
+    try:
+        by_random = request.args.get('random')
+        if by_random == None or by_random == '1':
+            return render_template('show.html',sel=random_x(16))
+        else:
+            try:
+                start_page = int(request.args.get('page')) * 16 - 16
+            except Exception, e:
+                start_page = 0
+            if start_page < 0:
+                start_page = 0
+            return render_template('show.html', sel=rank_se(start_page, start_page + 16))
+    except Exception, e:
+        return "Error."
 
 
 if __name__=='__main__':

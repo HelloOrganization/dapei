@@ -189,7 +189,7 @@
 <div class="row">
     {% for good in sel %}
   <div class="col-xs-6 col-md-3">
-    <a href="#" class="thumbnail">
+      <a href="{{good.src_url[0]}}" class="thumbnail">
         <img src="{{good.image_urls[0]}}" alt="...">
 	<div class="caption">
 		<button class="btn btn-primary" type="button">
