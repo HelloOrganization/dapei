@@ -29,10 +29,10 @@
         </div>
 		<div id="navbar" class="collapse navbar-collapse">
 		 <ul class="nav navbar-nav">
-		  	<li class="active"><a href="/">Index</a></li>
-			<li><a href="/show/?type=tops">Tops</a></li>
-			<li><a href="/show/?type=pants">Pants</a></li>
-			<li><a href="/show/?type=shoes">Shoes</a></li>
+		  	<li class="active"><a href="#">Index</a></li>
+			<li><a href="#">Tops</a></li>
+			<li><a href="#">Pants</a></li>
+			<li><a href="#">Shoes</a></li>
 		  </ul><button type="button" class="btn btn-default navbar-right">Tips on clothing</button>
 		</div>
 		<!--
@@ -68,11 +68,11 @@
       <div class="row">
 
         <div class="col-sm-8 blog-main">         		
-            {% for tip in sel %}
+    
 				<div class="row thumbnail">
 					<div class="col-xs-6 col-md-6">
 						<a href="#" class="thumbnail">
-                            <img src='{{tip.images[0].url}}' alt="...">
+							<img src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=f9526156720e0cf3b4fa46a96b2f997a/342ac65c1038534392f24b659313b07eca8088b1.jpg" alt="...">
 					
 							<div class="caption">
 							  <button class="btn btn-primary" type="button">
@@ -82,14 +82,11 @@
 						</a>
 					</div>
 					<div class="col-xs-6 col-md-6">
-                        <h1>{{tip.title[0].encode('utf-8')}}</h1>
-                        <br/>
-                        <h4>{{tip.short_dscr[0].encode('utf-8') + tip.short_dscr[1].encode('utf-8')}}</h4>
+						<p>Description</p>
 						<a href="#">Click for more</a>
 					</div>
 				</div>
-            {% endfor %}
-<!--				
+				
 				<div class="row thumbnail">
 					<div class="col-xs-6 col-md-6">
 						<p>Description</p>
@@ -147,7 +144,7 @@
 					
 				</div>
 		  
-    -->	  
+		  
 		  
 		  
 		  
@@ -164,31 +161,15 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar hidden-xs">
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          </div>
-          <div class="sidebar-module">
-            <h4>Archives</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">March 2014</a></li>
-              <li><a href="#">February 2014</a></li>
-              <li><a href="#">January 2014</a></li>
-              <li><a href="#">December 2013</a></li>
-              <li><a href="#">November 2013</a></li>
-              <li><a href="#">October 2013</a></li>
-              <li><a href="#">September 2013</a></li>
-              <li><a href="#">August 2013</a></li>
-              <li><a href="#">July 2013</a></li>
-              <li><a href="#">June 2013</a></li>
-              <li><a href="#">May 2013</a></li>
-              <li><a href="#">April 2013</a></li>
-            </ol>
+            <p>Aside from choosing popular clothes, another important thing is to make shure that your clothes matches
+            well with each other. Here we provide some tips about it to help you make good choices.</p>
           </div>
           <div class="sidebar-module">
             <h4>Elsewhere</h4>
             <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
+              <li><a href="http://www.vogue.com.cn/?international">Vogue</a></li>
+              <li><a href="http://www.mogujie.com/fashion?ptp=1.Bvij3Gw2._headch.3.2AQjMh">Mogujie</a></li>
+              <li><a href="http://www.mimito.com.cn/">Nvrenjie</a></li>
             </ol>
           </div>
         </div><!-- /.blog-sidebar -->
