@@ -11,8 +11,7 @@ sys.setdefaultencoding('utf-8')
 
 app = Flask(__name__)
 
-tops_dir = 'tmall/data/tops/'
-
+dirs = {'tops':'tmall/data/tops/','shoes':'tmall/data/shoes/','pants':'tmall/data/tops/'}
 def trade_num_to_int(tr_num):
     if type(tr_num) is list and len(tr_num) > 0:
         pat=u'([0-9\.]+)(万)?'
@@ -26,13 +25,13 @@ def trade_num_to_int(tr_num):
 
     
 
-def load_data(rank):
+def load_data(rank, clothing_type):
     print 'load data, rank:', rank
     data = {}
-    for site in os.listdir(tops_dir):
+    for site in os.listdir(dirs[clothing_type]):
         one_site = []
-        for jsonfile in os.listdir(tops_dir + site + "/"):
-            f = open(tops_dir +  site + '/' + jsonfile, 'r')
+        for jsonfile in os.listdir(dirs[clothing_type]+ site + "/"):
+            f = open(dirs[clothing_type]+  site + '/' + jsonfile, 'r')
             d = json.load(f)
             f.close()
             for ele in d:
@@ -89,7 +88,7 @@ def index():
     #sel=[{'image_urls':'http://gi3.mlist.alicdn.com/bao/uploaded/i3/TB1hd4tHpXXXXXgXXXXXXXXXXXX_!!0-item_pic.jpg_b.jpg'}, {'image_urls':'http://gi3.mlist.alicdn.com/bao/uploaded/i3/TB1hd4tHpXXXXXgXXXXXXXXXXXX_!!0-item_pic.jpg_b.jpg'}]
     #return 'sa'
     try:
-        return render_template('index.html', sel=random_x(load_data(rank=False), 16));
+        return render_template('index.html', sel=random_x(load_data(False,'tops'), 16));
     except Exception, e:
         return "Error."
 
@@ -105,10 +104,10 @@ def show():
         now_pg = 1
 
     if by_random == None or by_random == '1':
-        return render_template('show.html', sel=random_x(load_data(rank=False), 16),clothing_type=clothing_type,now_pg=now_pg, rand='1')
+        return render_template('show.html', sel=random_x(load_data(False,clothing_type), 16),clothing_type=clothing_type,now_pg=now_pg, rand='1')
     else:
         start_page = now_pg * 16 - 16
-        return render_template('show.html', sel=rank_se(load_data(rank=True), start_page, start_page + 16),clothing_type=clothing_type,now_pg=now_pg,rand='0')
+        return render_template('show.html', sel=rank_se(load_data(True,clothing_type), start_page, start_page + 16),clothing_type=clothing_type,now_pg=now_pg,rand='0')
 
 tips_dir='./tmall/data/tips/'
 def load_tips():
