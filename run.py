@@ -96,16 +96,18 @@ def index():
 def show():
     clothing_type = request.args.get('type')
     by_random = request.args.get('random')
+    try:
+        now_pg=int(request.args.get('page'))
+    except Exception, e:
+        now_pg = 0
+    if now_pg < 0:
+        now_pg = 0
+
     if by_random == None or by_random == '1':
-        return render_template('show.html', sel=random_x(16))
+        return render_template('show.html', sel=random_x(16),clothing_type=clothing_type,now_pg=now_pg, rand='1')
     else:
-        try:
-            start_page = int(request.args.get('page')) * 16 - 16
-        except Exception, e:
-            start_page = 0
-        if start_page < 0:
-            start_page = 0
-        return render_template('show.html', sel=rank_se(start_page, start_page + 16))
+        start_page = now_pg * 16 - 16
+        return render_template('show.html', sel=rank_se(start_page, start_page + 16),clothing_type=clothing_type,now_pg=now_pg,rand='0')
 
 if __name__=='__main__':
     port = int(os.environ.get("PORT", 5300))

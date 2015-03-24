@@ -341,11 +341,9 @@
         <span aria-hidden="true">&laquo;</span>
       </a>
     </li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
+    {% for i in range(5) %}
+    <li><a href="/show/?type={{clothing_type}}&page={{now_pg + i}}&random={{rand}}">{{now_pg + i}}</a></li>
+    {% endfor %}
     <li>
       <a href="#" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
