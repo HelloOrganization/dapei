@@ -27,7 +27,7 @@ def trade_num_to_int(tr_num):
     
 
 def load_data():
-    print 'load_data'
+ #   print 'load_data'
     data = {}
     for site in os.listdir(tops_dir):
         one_site = []
@@ -39,11 +39,11 @@ def load_data():
                 ele['trade_num_val'] = trade_num_to_int(ele['trade_num'])
             d=sorted(d, key=lambda ele:ele['trade_num_val'], reverse=True)
             one_site.extend(d)
-        for ele in one_site:
-            print ele['trade_num_val'], 
+ #       for ele in one_site:
+  #          print ele['trade_num_val'], 
 
         data[site] = one_site
-    print 'load_data'
+ #   print 'load_data'
     return data
 
 clothing_data = load_data()
@@ -55,7 +55,7 @@ def random_x(num):
     sel = []
     while len(sel) < num:
         sel.append(tm[random.randint(0,number - 1)])
-    print sel
+ #   print sel
     return sel
 
 def encode_tm(sel):
@@ -70,7 +70,7 @@ def encode_tm(sel):
         except Exception, e:
             good['title'] = ''
         ret.append(good)
-    print ret
+#    print ret
     return ret
 
 def rank_se(start, end):
