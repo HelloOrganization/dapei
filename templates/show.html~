@@ -150,7 +150,7 @@
         <img src="{{good.image_urls[0]}}" alt="...">
 	<div class="caption">
 		<button class="btn btn-primary" type="button">
-            é”€é‡<span class="badge">
+            ±È½Ï <span class="badge">
                 {% if good.trade_num == [] %}
                     0
                 {% else %}
