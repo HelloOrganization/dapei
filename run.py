@@ -2,6 +2,7 @@
 # coding=utf-8
 from flask import Flask, redirect, url_for, render_template, request, g, _app_ctx_stack, make_response
 import os
+import re
 import json
 import random
 import sys
@@ -11,7 +12,22 @@ sys.setdefaultencoding('utf-8')
 app = Flask(__name__)
 
 data_dir = 'tmall/data/tops/'
+
+def trade_num_to_int(tr_num):
+    if type(tr_num) is list and len(tr_num) > 0:
+        pat=u'([0-9\.]+)(万)?'
+        m = re.match(pat,tr_num[0])
+        if m.group(2) != None:
+            return 10000 * float(m.group(1))
+        else:
+            return int(m.group(1))
+    else:
+        return 0
+
+    
+
 def load_data():
+    print 'load_data'
     data = {}
     for site in os.listdir(data_dir):
         one_site = []
@@ -19,8 +35,15 @@ def load_data():
             f = open(data_dir +  site + '/' + jsonfile, 'r')
             d = json.load(f)
             f.close()
+            for ele in d:
+                ele['trade_num_val'] = trade_num_to_int(ele['trade_num'])
+            d=sorted(d, key=lambda ele:ele['trade_num_val'], reverse=True)
             one_site.extend(d)
+        for ele in one_site:
+            print ele['trade_num_val'], 
+
         data[site] = one_site
+    print 'load_data'
     return data
 
 clothing_data = load_data()
@@ -69,8 +92,8 @@ def index():
     except Exception, e:
         return "Error."
 
-@app.route('/clothes/')
-def clothes():
+@app.route('/tops/')
+def tops():
     try:
         by_random = request.args.get('random')
         if by_random == None or by_random == '1':
