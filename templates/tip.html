@@ -29,11 +29,11 @@
         </div>
 		<div id="navbar" class="collapse navbar-collapse">
 		 <ul class="nav navbar-nav">
-		  	<li class="active"><a href="#">Index</a></li>
-			<li><a href="#">Tops</a></li>
-			<li><a href="#">Pants</a></li>
-			<li><a href="#">Shoes</a></li>
-		  </ul><button type="button" class="btn btn-default navbar-right">Tips on clothing</button>
+	  	<li class="active"><a href="/">首页</a></li>
+			<li><a href="/show/?type=tops">上衣</a></li>
+			<li><a href="/show/?type=pants">裤子</a></li>
+			<li><a href="/show/?type=shoes">鞋包</a></li>
+		  </ul><button type="button" class="btn btn-default navbar-right">搭配风</button>
 		</div>
 		<!--
 		<div id="navbar" class="navbar-collapse collapse">
@@ -70,7 +70,7 @@
         <div class="col-sm-8 blog-main">         		
     
 				<div class="row thumbnail">
-					<div class="col-xs-6 col-md-6">
+					<div class="col-xs-12 col-md-6">
 						<a href="#" class="thumbnail">
 							<img src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=f9526156720e0cf3b4fa46a96b2f997a/342ac65c1038534392f24b659313b07eca8088b1.jpg" alt="...">
 					
@@ -81,8 +81,15 @@
 							</div>
 						</a>
 					</div>
+<<<<<<< HEAD
 					<div class="col-xs-6 col-md-6">
 						<p>Description</p>
+=======
+					<div class="col-xs-0 col-md-6">
+                        <h2>{{tip.title[0].encode('utf-8')}}</h2>
+                        <br/>
+                        <h4>{{tip.short_dscr[0].encode('utf-8') + tip.short_dscr[1].encode('utf-8')}}</h4>
+>>>>>>> 295e8195b7dcb2784c3d327bd8a981d16c55b452
 						<a href="#">Click for more</a>
 					</div>
 				</div>

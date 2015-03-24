@@ -26,8 +26,8 @@ def trade_num_to_int(tr_num):
 
     
 
-def load_data():
-    print 'load_data'
+def load_data(rank):
+    print 'load data, rank:', rank
     data = {}
     for site in os.listdir(tops_dir):
         one_site = []
@@ -37,43 +37,44 @@ def load_data():
             f.close()
             for ele in d:
                 ele['trade_num_val'] = trade_num_to_int(ele['trade_num'])
-            d=sorted(d, key=lambda ele:ele['trade_num_val'], reverse=True)
+            if rank:
+                d=sorted(d, key=lambda ele:ele['trade_num_val'], reverse=True)
             one_site.extend(d)
-        for ele in one_site:
-            print ele['trade_num_val'], 
+ #       for ele in one_site:
+  #          print ele['trade_num_val'], 
 
         data[site] = one_site
-    print 'load_data'
+ #   print 'load_data'
     return data
 
-clothing_data = load_data()
+#clothing_data = load_data()
 
-def random_x(num):
-    print 'random_x'
+def random_x(clothing_data, num):
+    #print 'random_x'
     tm = clothing_data['tm']
     number = len(tm)
     sel = []
     while len(sel) < num:
         sel.append(tm[random.randint(0,number - 1)])
-    print sel
+ #   print sel
     return sel
 
-def encode_tm(sel):
-    ret = []
-    for good in sel:
-        try:
-            good['trade_num'] = good['trade_num'][0].encode('utf-8')
-        except Exception, e:
-            good['trade_num'] = u'未知'
-        try:
-            good['title'] = good['title'][0].encode('utf-8')
-        except Exception, e:
-            good['title'] = ''
-        ret.append(good)
-    print ret
-    return ret
-
-def rank_se(start, end):
+#def encode_tm(sel):
+#    ret = []
+#    for good in sel:
+#        try:
+#            good['trade_num'] = good['trade_num'][0].encode('utf-8')
+#        except Exception, e:
+#            good['trade_num'] = u'未知'
+#        try:
+#            good['title'] = good['title'][0].encode('utf-8')
+#        except Exception, e:
+#            good['title'] = ''
+#        ret.append(good)
+##    print ret
+#    return ret
+#
+def rank_se(clothing_data, start, end):
     tm = clothing_data['tm']
     number = len(tm)
     if start >= number:
@@ -88,7 +89,7 @@ def index():
     #sel=[{'image_urls':'http://gi3.mlist.alicdn.com/bao/uploaded/i3/TB1hd4tHpXXXXXgXXXXXXXXXXXX_!!0-item_pic.jpg_b.jpg'}, {'image_urls':'http://gi3.mlist.alicdn.com/bao/uploaded/i3/TB1hd4tHpXXXXXgXXXXXXXXXXXX_!!0-item_pic.jpg_b.jpg'}]
     #return 'sa'
     try:
-        return render_template('index.html', sel=random_x(16));
+        return render_template('index.html', sel=random_x(load_data(rank=False), 16));
     except Exception, e:
         return "Error."
 
@@ -104,10 +105,10 @@ def show():
         now_pg = 1
 
     if by_random == None or by_random == '1':
-        return render_template('show.html', sel=random_x(16),clothing_type=clothing_type,now_pg=now_pg, rand='1')
+        return render_template('show.html', sel=random_x(load_data(rank=False), 16),clothing_type=clothing_type,now_pg=now_pg, rand='1')
     else:
         start_page = now_pg * 16 - 16
-        return render_template('show.html', sel=rank_se(start_page, start_page + 16),clothing_type=clothing_type,now_pg=now_pg,rand='0')
+        return render_template('show.html', sel=rank_se(load_data(rank=True), start_page, start_page + 16),clothing_type=clothing_type,now_pg=now_pg,rand='0')
 
 tips_dir='./tmall/data/tips/'
 def load_tips():

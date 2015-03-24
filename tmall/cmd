@@ -1,0 +1,1 @@
+scrapy crawl tmall -o data/pants/tm/1.json -a sp=1
