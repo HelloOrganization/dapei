@@ -337,7 +337,11 @@
 <nav class="col-md-offset-5 navbar-static-bottom">
   <ul class="pagination">
     <li>
-      <a href="#" aria-label="Previous">
+    {% if now_pg==1 %}
+    <a href="/show/?type={{clothing_type}}&page=1&random={{rand}}" aria-label="Previous">
+    {% else %}
+    <a href="/show/?type={{clothing_type}}&page={{now_pg-1}}&random={{rand}}" aria-label="Previous">
+    {% endif %}
         <span aria-hidden="true">&laquo;</span>
       </a>
     </li>
@@ -345,7 +349,7 @@
     <li><a href="/show/?type={{clothing_type}}&page={{now_pg + i}}&random={{rand}}">{{now_pg + i}}</a></li>
     {% endfor %}
     <li>
-      <a href="#" aria-label="Next">
+    <a href="/show/?type={{clothing_type}}&page={{now_pg+1}}&random={{rand}}" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
       </a>
     </li>

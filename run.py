@@ -99,9 +99,9 @@ def show():
     try:
         now_pg=int(request.args.get('page'))
     except Exception, e:
-        now_pg = 0
-    if now_pg < 0:
-        now_pg = 0
+        now_pg = 1
+    if now_pg <= 0:
+        now_pg = 1
 
     if by_random == None or by_random == '1':
         return render_template('show.html', sel=random_x(16),clothing_type=clothing_type,now_pg=now_pg, rand='1')
