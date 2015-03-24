@@ -11,7 +11,7 @@ sys.setdefaultencoding('utf-8')
 
 app = Flask(__name__)
 
-data_dir = 'tmall/data/tops/'
+tops_dir = 'tmall/data/tops/'
 
 def trade_num_to_int(tr_num):
     if type(tr_num) is list and len(tr_num) > 0:
@@ -29,10 +29,10 @@ def trade_num_to_int(tr_num):
 def load_data():
     print 'load_data'
     data = {}
-    for site in os.listdir(data_dir):
+    for site in os.listdir(tops_dir):
         one_site = []
-        for jsonfile in os.listdir(data_dir + site + "/"):
-            f = open(data_dir +  site + '/' + jsonfile, 'r')
+        for jsonfile in os.listdir(tops_dir + site + "/"):
+            f = open(tops_dir +  site + '/' + jsonfile, 'r')
             d = json.load(f)
             f.close()
             for ele in d:
@@ -108,6 +108,25 @@ def show():
     else:
         start_page = now_pg * 16 - 16
         return render_template('show.html', sel=rank_se(start_page, start_page + 16),clothing_type=clothing_type,now_pg=now_pg,rand='0')
+
+tips_dir='./tmall/data/tips/'
+def load_tips():
+    ret = []
+    for fl in os.listdir(tips_dir):
+        f = open(fl)
+        tip_json = json.load(f)
+        ret.extend(tip_json)
+    return ret
+tips_data = load_tips()
+
+def get_tips():
+    return tips_data[0:5]
+
+@app.route('/tips/')
+def tips():
+    tips_to_show=get_tips()
+    return render_template('tips.html', sel=tips_to_show)
+
 
 if __name__=='__main__':
     port = int(os.environ.get("PORT", 5300))
