@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clothes Gallery</title>
+    <!-- Bootstrap -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  
+  
+  
+  <body>
+  
+  
+   
+  
+  
+  
+  <!--
+  <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+  </ul>
+</div>
+<div role="navigation">
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="http://www,baidu.com">Home</a></li>
+  <li role="presentation"><a href="http://www.sina.com">Profile</a></li>
+  <li role="presentation"><a href="http//www.126.com">Messages</a></li>
+</ul>
+</div>
+-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#view">Clothes Gallery</a>
+        </div>
+		<div id="navbar" class="collapse navbar-collapse">
+		 <ul class="nav navbar-nav">
+		  	<li class="active">
+	        <li><a href="/">首页</a></li>
+			<li><a href="/show/?type=tops">上衣</a></li>
+			<li><a href="/show/?type=pants">裤子</a></li>
+			<li><a href="/show/?type=shoes">鞋包</a></li>
+		  </ul><!--button type="button" class="btn btn-default navbar-right">Tips on clothing</button-->
+		<a href="/tips/"class="btn btn-default navbar-right">搭配风</a>
+    </div>
+		<!--
+		<div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div>-->
+		<!--/.navbar-collapse -->
+		
+      </div>
+</nav>
+
+<!--'href="/show/?type={{clothing_type}}&random=1"--> 
+<br/><br/><br/>
+<a  href="/show/?type={{clothing_type}}&random=1" class="btn btn-primary navbar-right">I'm Feeling Lucky!</a>
+<!--button type='buttoni' class="btn btn-primary navbar-right">I'm Feeling Lucky!</button-->
+<a href='/show/?type={{clothing_type}}&random=0&page=1' class="btn btn-success navbar-right">Sort by popularity</a>
+<br/><hr/>
+
+<div class="row">
+    {% for good in sel %}
+  <div class="col-xs-6 col-md-3">
+      <a href="{{good.src_url[0]}}" class="thumbnail">
+        <img src="{{good.image_urls[0]}}" alt="...">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+            销量<span class="badge">
+                {% if good.trade_num == [] %}
+                    0
+                {% else %}
+                    {{good.trade_num[0].encode('utf-8')}}
+                {% endif %}
+                </span>
+		</button>
+        <p>{{good.title[0]}}</p>
+	</div>
+	</a>
+  </div>
+  {% endfor %}
+  <!--
+  <div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://h.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=a6e9c075213fb80e18dc698557b8444b/5fdf8db1cb134954ae232420564e9258d1094ab1.jpg"alt="">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">1</span>
+		</button>
+	</div>
+	</a>
+</div>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://h.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=33586d9af01f3a294ec5dd9cf84cd754/960a304e251f95ca6ec45ef2c9177f3e67095245.jpg">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">9</span>
+		</button>
+	</div>
+	</a>
+</div>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=8b8425e4e2fe9925df01610255c135ba/94cad1c8a786c917ce936f18cb3d70cf3bc7577a.jpg">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">2</span>
+		</button>
+	</div>
+	</a>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <img src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=f9526156720e0cf3b4fa46a96b2f997a/342ac65c1038534392f24b659313b07eca8088b1.jpg" alt="...">
+    
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">4</span>
+		</button>
+	</div>
+	</a>
+  </div>
+  <div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://h.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=a6e9c075213fb80e18dc698557b8444b/5fdf8db1cb134954ae232420564e9258d1094ab1.jpg"alt="">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">1</span>
+		</button>
+	</div>
+	</a>
+</div>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://h.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=33586d9af01f3a294ec5dd9cf84cd754/960a304e251f95ca6ec45ef2c9177f3e67095245.jpg">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">9</span>
+		</button>
+	</div>
+	</a>
+</div>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=8b8425e4e2fe9925df01610255c135ba/94cad1c8a786c917ce936f18cb3d70cf3bc7577a.jpg">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">2</span>
+		</button>
+	</div>
+	</a>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <img src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=f9526156720e0cf3b4fa46a96b2f997a/342ac65c1038534392f24b659313b07eca8088b1.jpg" alt="...">
+    
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">4</span>
+		</button>
+	</div>
+	</a>
+  </div>
+  <div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://h.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=a6e9c075213fb80e18dc698557b8444b/5fdf8db1cb134954ae232420564e9258d1094ab1.jpg"alt="">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">1</span>
+		</button>
+	</div>
+	</a>
+</div>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://h.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=33586d9af01f3a294ec5dd9cf84cd754/960a304e251f95ca6ec45ef2c9177f3e67095245.jpg">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">9</span>
+		</button>
+	</div>
+	</a>
+</div>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=8b8425e4e2fe9925df01610255c135ba/94cad1c8a786c917ce936f18cb3d70cf3bc7577a.jpg">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">2</span>
+		</button>
+	</div>
+	</a>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <img src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=f9526156720e0cf3b4fa46a96b2f997a/342ac65c1038534392f24b659313b07eca8088b1.jpg" alt="...">
+    
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">4</span>
+		</button>
+	</div>
+	</a>
+  </div>
+  <div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://h.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=a6e9c075213fb80e18dc698557b8444b/5fdf8db1cb134954ae232420564e9258d1094ab1.jpg"alt="">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">1</span>
+		</button>
+	</div>
+	</a>
+</div>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://h.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=33586d9af01f3a294ec5dd9cf84cd754/960a304e251f95ca6ec45ef2c9177f3e67095245.jpg">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">9</span>
+		</button>
+	</div>
+	</a>
+</div>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=8b8425e4e2fe9925df01610255c135ba/94cad1c8a786c917ce936f18cb3d70cf3bc7577a.jpg">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">2</span>
+		</button>
+	</div>
+	</a>
+</div>
+-->
+</div>
+
+
+
+<!-- 
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+<!--
+<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Link with href
+</a>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Button with data-target
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+    ...
+  </div>
+</div>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></hr>
+
+<div class="panel panel-info">
+	<div class="panel-heading">#1</div>
+	<div class="panel-body ">
+		<div class="media">
+		  <div class="media-left media-top">
+			<a href="#">
+			  <img class="media-object" src="http://2a.zol-img.com.cn/product/87/220/ceSdOHuMaLQA.jpg" alt="none">
+			</a>
+		  </div>
+		  <div class="media-body">
+			<h4 class="media-heading">Oh, Look What I've Got After Clicking F5 Button!</h4>
+			Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+		Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+		  </div>
+		</div>
+	</div>
+</div>
+<div class="alert alert-warning" role="alert">.asdf.</div>
+
+-->
+<nav class="col-md-offset-5 navbar-static-bottom">
+  <ul class="pagination">
+    <li>
+    {% if now_pg==1 %}
+    <a href="/show/?type={{clothing_type}}&page=1&random={{rand}}" aria-label="Previous">
+    {% else %}
+    <a href="/show/?type={{clothing_type}}&page={{now_pg-1}}&random={{rand}}" aria-label="Previous">
+    {% endif %}
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    {% for i in range(5) %}
+    <li><a href="/show/?type={{clothing_type}}&page={{now_pg + i}}&random={{rand}}">{{now_pg + i}}</a></li>
+    {% endfor %}
+    <li>
+    <a href="/show/?type={{clothing_type}}&page={{now_pg+1}}&random={{rand}}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+  </br></br>
+  <hr>
+  <p class="text-center">Designed by Qingying Chen, Yiqun Ouyang, Minxing Liu, Yangqingwei Shi, Peking University.
+  </p>
+  
+  
+  
+  
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

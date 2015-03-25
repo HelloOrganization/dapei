@@ -1,0 +1,45 @@
+ * Running on http://0.0.0.0:5300/ (Press CTRL+C to quit)
+ * Restarting with stat
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:37:31] "GET / HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:37:38] "GET /show/?type=pants HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/flaskapps/dapei/run.py", line 107, in show
+    return render_template('show.html', sel=random_x(load_data(False,clothing_type), 16),clothing_type=clothing_type,now_pg=now_pg, rand='1')
+  File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 127, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 791, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/usr/local/lib/python2.7/site-packages/jinja2/environment.py", line 765, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/usr/local/lib/python2.7/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/usr/local/lib/python2.7/site-packages/flask/templating.py", line 64, in get_source
+    raise TemplateNotFound(template)
+TemplateNotFound: show.html
+124.205.76.255 - - [25/Mar/2015 12:37:38] "GET /show/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:37:38] "GET /show/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:37:38] "GET /show/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:37:39] "GET /show/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:37:40] "GET /show/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:37:40] "GET /show/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+python: can't open file '.py': [Errno 2] No such file or directory
