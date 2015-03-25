@@ -1,1 +1,1 @@
-screen -L -d -m -S dapei python .py
+screen -L -d -m -S dapei python run.py

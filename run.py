@@ -11,7 +11,7 @@ sys.setdefaultencoding('utf-8')
 
 app = Flask(__name__)
 
-dirs = {'tops':'tmall/data/tops/','shoes':'tmall/data/shoes/','pants':'tmall/data/tops/'}
+dirs = {'tops':'tmall/data/tops/','shoes':'tmall/data/shoes/','pants':'tmall/data/pants/'}
 def trade_num_to_int(tr_num):
     if type(tr_num) is list and len(tr_num) > 0:
         pat=u'([0-9\.]+)(万)?'
