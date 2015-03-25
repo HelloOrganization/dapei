@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clothes Gallery</title>
+    <!-- Bootstrap -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  
+  
+  
+  <body>
+  
+  
+   
+  
+  
+  
+  <div class="jumbotron">
+	
+		  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+		  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+			<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+			<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		  </ol>
+
+		  <!-- Wrapper for slides -->
+		  <div class="carousel-inner" role="listbox" style="font-family:Palatino Linotype">
+			<div class="item active">
+			  <img src="http://image.tianjimedia.com/uploadImages/2013/169/63SHZY6DTNT5.jpg">
+			  <div class="carousel-caption">
+				<h2>I love you baby.</h2>
+				<h4>Here is my present for you.</h4>
+				<p> </p>
+			  </div>
+			</div>
+			<div class="item">
+			  <img src="http://image.tianjimedia.com/uploadImages/2013/169/8I920JCQITKG.jpg" alt="lalalala">
+			  <div class="carousel-caption">
+				<h2>Best quality</h2>
+				<h4>Best design</h4>
+				<p> </p>
+			  </div>
+			</div>
+		  </div>
+
+		  <!-- Controls -->
+		  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		  </a>
+		</div>
+
+</div>
+  <!--
+  <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+  </ul>
+</div>
+<div role="navigation">
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="http://www,baidu.com">Home</a></li>
+  <li role="presentation"><a href="http://www.sina.com">Profile</a></li>
+  <li role="presentation"><a href="http//www.126.com">Messages</a></li>
+</ul>
+</div>
+-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#view">Clothes Gallery</a>
+        </div>
+<<<<<<< HEAD
+		<div>
+		  <ul class="nav navbar-nav">
+		  	<li class="active"><a href="/">Index</a></li>
+            <li><a href="/show/?type=tops">Tops</a></li>
+			<li><a href="/show/?type=pants">Pants</a></li>
+			<li><a href="/show/?type=shoes">Shoes</a></li>
+
+		  </ul>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+		  <button type="button" class="btn btn-default navbar-right">Tips on clothing</button>
+=======
+		<div id="navbar" class="collapse navbar-collapse">
+		 <ul class="nav navbar-nav">
+		  	<li class="active"><a href="#">Index</a></li>
+			<li><a href="#">Tops</a></li>
+			<li><a href="#">Pants</a></li>
+			<li><a href="#">Shoes</a></li>
+		  </ul><button type="button" class="btn btn-default navbar-right">Tips on clothing</button>
+>>>>>>> 0c53757c4d6dec907aae4b6362b6b7e5349c1b2b
+		</div>
+		<!--
+		<div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div>-->
+		<!--/.navbar-collapse -->
+		
+      </div>
+</nav>
+
+<nav class="navbar navbar-inverse" id="view">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <!--button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button-->
+	  
+      <a href="#"class="navbar-brand"><u>In Fashion    </u></a>
+	  <a href="#"class="navbar-brand navbar-right"><small>Sort by popularity</small></a>
+	  <a href="#"class="navbar-brand navbar-right"><small>I'm Feeling Lucky!</small></a>
+	  <!--ul class="nav navbar-nav">
+		  <li class="active" role="presentation" ><a href="#">  In Fasion</a></li>
+		</ul-->
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <!--<li class="active"><a href="#"><h4>Recommend for You.</h4><span class="sr-only">(current)</span></a></li>-->
+        <!--li><a href="#">I'm Feeling Lucky!</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+		-->
+      </ul>
+      <!--form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form-->
+	  <!--
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><h4>Refresh to get more items.</h4></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+		
+		
+      </ul>-->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="row">
+    {% for good in sel %}
+  <div class="col-xs-6 col-md-3">
+      <a href="{{good.src_url[0]}}" class="thumbnail">
+        <img src="{{good.image_urls[0]}}" alt="...">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+            销量 <span class="badge">
+                {% if good.trade_num == [] %}
+                    0
+                {% else %}
+                    {{good.trade_num[0].encode('utf-8')}}
+                {% endif %}
+                </span>
+		</button>
+	</div>
+	</a>
+  </div>
+  {% endfor %}
+<!--  <div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://h.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=a6e9c075213fb80e18dc698557b8444b/5fdf8db1cb134954ae232420564e9258d1094ab1.jpg"alt="">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">1</span>
+		</button>
+	</div>
+	</a>
+</div>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://h.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=33586d9af01f3a294ec5dd9cf84cd754/960a304e251f95ca6ec45ef2c9177f3e67095245.jpg">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">9</span>
+		</button>
+	</div>
+	</a>
+</div>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=8b8425e4e2fe9925df01610255c135ba/94cad1c8a786c917ce936f18cb3d70cf3bc7577a.jpg">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">2</span>
+		</button>
+	</div>
+	</a>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <img src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=f9526156720e0cf3b4fa46a96b2f997a/342ac65c1038534392f24b659313b07eca8088b1.jpg" alt="...">
+    
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">4</span>
+		</button>
+	</div>
+	</a>
+  </div>
+  <div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://h.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=a6e9c075213fb80e18dc698557b8444b/5fdf8db1cb134954ae232420564e9258d1094ab1.jpg"alt="">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">1</span>
+		</button>
+	</div>
+	</a>
+</div>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://h.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=33586d9af01f3a294ec5dd9cf84cd754/960a304e251f95ca6ec45ef2c9177f3e67095245.jpg">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">9</span>
+		</button>
+	</div>
+	</a>
+</div>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=8b8425e4e2fe9925df01610255c135ba/94cad1c8a786c917ce936f18cb3d70cf3bc7577a.jpg">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">2</span>
+		</button>
+	</div>
+	</a>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <img src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=f9526156720e0cf3b4fa46a96b2f997a/342ac65c1038534392f24b659313b07eca8088b1.jpg" alt="...">
+    
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">4</span>
+		</button>
+	</div>
+	</a>
+  </div>
+  <div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://h.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=a6e9c075213fb80e18dc698557b8444b/5fdf8db1cb134954ae232420564e9258d1094ab1.jpg"alt="">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">1</span>
+		</button>
+	</div>
+	</a>
+</div>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://h.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=33586d9af01f3a294ec5dd9cf84cd754/960a304e251f95ca6ec45ef2c9177f3e67095245.jpg">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">9</span>
+		</button>
+	</div>
+	</a>
+</div>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=8b8425e4e2fe9925df01610255c135ba/94cad1c8a786c917ce936f18cb3d70cf3bc7577a.jpg">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">2</span>
+		</button>
+	</div>
+	</a>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <a href="#" class="thumbnail">
+      <img src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=f9526156720e0cf3b4fa46a96b2f997a/342ac65c1038534392f24b659313b07eca8088b1.jpg" alt="...">
+    
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">4</span>
+		</button>
+	</div>
+	</a>
+  </div>
+  <div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://h.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=a6e9c075213fb80e18dc698557b8444b/5fdf8db1cb134954ae232420564e9258d1094ab1.jpg"alt="">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">1</span>
+		</button>
+	</div>
+	</a>
+</div>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://h.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=33586d9af01f3a294ec5dd9cf84cd754/960a304e251f95ca6ec45ef2c9177f3e67095245.jpg">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">9</span>
+		</button>
+	</div>
+	</a>
+</div>
+<div class="col-xs-6 col-md-3">
+  <a href="#" class="thumbnail">
+	<img src="http://b.hiphotos.baidu.com/baike/c0%3Dbaike220%2C5%2C5%2C220%2C73/sign=8b8425e4e2fe9925df01610255c135ba/94cad1c8a786c917ce936f18cb3d70cf3bc7577a.jpg">
+	<div class="caption">
+		<button class="btn btn-primary" type="button">
+		  Level <span class="badge">2</span>
+		</button>
+	</div>
+	</a>
+</div>
+-->
+</div>
+
+
+
+<!-- 
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+<!--
+<a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Link with href
+</a>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Button with data-target
+</button>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+    ...
+  </div>
+</div>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></hr>
+
+<div class="panel panel-info">
+	<div class="panel-heading">#1</div>
+	<div class="panel-body ">
+		<div class="media">
+		  <div class="media-left media-top">
+			<a href="#">
+			  <img class="media-object" src="http://2a.zol-img.com.cn/product/87/220/ceSdOHuMaLQA.jpg" alt="none">
+			</a>
+		  </div>
+		  <div class="media-body">
+			<h4 class="media-heading">Oh, Look What I've Got After Clicking F5 Button!</h4>
+			Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+		Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+		  </div>
+		</div>
+	</div>
+</div>
+<div class="alert alert-warning" role="alert">.asdf.</div>
+
+-->
+<!--
+<nav class="col-md-offset-5 navbar-static-bottom">
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+-->
+  </br></br>
+  <hr>
+  <p class="text-center">Designed by Qingying Chen, Yiqun Ouyang, Minxing Liu, Yangqingwei Shi, Peking University.
+  </p>
+  
+  
+  
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
