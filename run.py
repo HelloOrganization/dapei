@@ -6,6 +6,7 @@ import re
 import json
 import random
 import sys
+import getopt
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -16,6 +17,8 @@ def trade_num_to_int(tr_num):
     if type(tr_num) is list and len(tr_num) > 0:
         pat=u'([0-9\.]+)(万)?'
         m = re.match(pat,tr_num[0])
+        if m == None:
+            return 0
         if m.group(2) != None:
             return 10000 * float(m.group(1))
         else:
@@ -26,7 +29,7 @@ def trade_num_to_int(tr_num):
     
 
 def load_data(rank, clothing_type):
-    print 'load data, rank:', rank
+ #   print 'load data, rank:', rank
     data = {}
     for site in os.listdir(dirs[clothing_type]):
         one_site = []
@@ -129,8 +132,24 @@ def tips():
 
 
 if __name__=='__main__':
-    port = int(os.environ.get("PORT", 5300))
-    app.run(host='0.0.0.0', port=port, debug=True)
+    port=5300
+    de=False
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], "p:d")
+    except Exception, e:
+        #usage()
+        print 'err'
+        sys.exit(2)
+   # print opts
+    for o, a in opts:
+        if o == '-p':
+            port=int(a)
+   #         print 'port is',port
+        elif o == '-d':
+            de = True
+   #         print 'debug is',de
+    port = int(os.environ.get("PORT", port))
+    app.run(host='0.0.0.0', port=port, debug=de)
 
 
 

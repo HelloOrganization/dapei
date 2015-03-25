@@ -55,3 +55,187 @@ load data, rank: False
  * Restarting with stat
  * Detected change in '/flaskapps/dapei/run.py', reloading
  * Restarting with stat
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:50:10] "GET /show/?type=pants HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/flaskapps/dapei/run.py", line 107, in show
+    return render_template('show.html', sel=random_x(load_data(False,clothing_type), 16),clothing_type=clothing_type,now_pg=now_pg, rand='1')
+  File "/flaskapps/dapei/run.py", line 35, in load_data
+    d = json.load(f)
+  File "/usr/local/lib/python2.7/json/__init__.py", line 290, in load
+    **kw)
+  File "/usr/local/lib/python2.7/json/__init__.py", line 338, in loads
+    return _default_decoder.decode(s)
+  File "/usr/local/lib/python2.7/json/decoder.py", line 366, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/local/lib/python2.7/json/decoder.py", line 382, in raw_decode
+    obj, end = self.scan_once(s, idx)
+ValueError: Expecting object: line 180 column 337 (char 123885)
+124.205.76.255 - - [25/Mar/2015 12:50:10] "GET /show/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:50:10] "GET /show/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:50:10] "GET /show/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:50:11] "GET /show/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:50:11] "GET /show/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:50:12] "GET /show/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:51:04] "GET /show/?type=pants HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/flaskapps/dapei/run.py", line 107, in show
+    return render_template('show.html', sel=random_x(load_data(False,clothing_type), 16),clothing_type=clothing_type,now_pg=now_pg, rand='1')
+  File "/flaskapps/dapei/run.py", line 38, in load_data
+    ele['trade_num_val'] = trade_num_to_int(ele['trade_num'])
+  File "/flaskapps/dapei/run.py", line 19, in trade_num_to_int
+    if m.group(2) != None:
+AttributeError: 'NoneType' object has no attribute 'group'
+124.205.76.255 - - [25/Mar/2015 12:51:04] "GET /show/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:51:05] "GET /show/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:51:05] "GET /show/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:51:05] "GET /show/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:51:05] "GET /show/?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:51:25] "GET /show/?__debugger__=yes&cmd=ele&frm=140668525484112&s=r0gptZClsHr2Scli5czd HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:51:25] "GET /show/?__debugger__=yes&cmd=resource&f=more.png HTTP/1.1" 200 -
+ * Detected change in '/flaskapps/dapei/run.py', reloading
+ * Restarting with stat
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:52:49] "GET /show/?type=pants HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:52:51] "GET /show/?type=pants HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:52:53] "GET /show/?type=shoes HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:52:54] "GET /show/?type=pants HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:52:55] "GET /show/?type=tops HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:52:57] "GET / HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:53:01] "GET / HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:53:04] "GET /show/?type=tops HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:53:07] "GET /show/?type=pants HTTP/1.1" 200 -
+load data, rank: True
+124.205.76.255 - - [25/Mar/2015 12:53:29] "GET /show/?type=pants&random=0&page=1 HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:53:46] "GET /show/?type=shoes HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:54:24] "GET /show/?type=pants HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:54:40] "GET /tips/ HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:54:49] "GET /show/?type=shoes HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:54:50] "GET / HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:54:52] "GET / HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:58:52] "GET /show/?type=shoes HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:59:02] "GET / HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:59:04] "GET /show/?type=pants HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:59:05] "GET /show/?type=tops HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:59:06] "GET /show/?type=shoes HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:59:07] "GET / HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:59:26] "GET / HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:59:27] "GET /show/?type=pants HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:59:29] "GET /show/?type=tops HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 12:59:34] "GET /tips/ HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:59:50] "GET / HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:59:57] "GET / HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 12:59:58] "GET / HTTP/1.1" 200 -
+ * Detected change in '/flaskapps/dapei/run.py', reloading
+ * Restarting with stat
+ * Running on http://0.0.0.0:5300/ (Press CTRL+C to quit)
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:11] "GET / HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:21] "GET /show/?type=tops HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:22] "GET /show/?type=pants HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:23] "GET /show/?type=shoes HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:24] "GET /show/?type=pants HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:25] "GET / HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:26] "GET /show/?type=tops HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:27] "GET /show/?type=pants HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:29] "GET /show/?type=shoes HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:30] "GET / HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:31] "GET /show/?type=tops HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:31] "GET /show/?type=pants HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:32] "GET /show/?type=shoes HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 13:23:34] "GET /tips/ HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:35] "GET / HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:36] "GET /show/?type=tops HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:37] "GET /show/?type=pants HTTP/1.1" 200 -
+load data, rank: False
+124.205.76.255 - - [25/Mar/2015 13:23:38] "GET /show/?type=shoes HTTP/1.1" 200 -
+ * Running on http://0.0.0.0:5300/ (Press CTRL+C to quit)
+124.205.76.255 - - [25/Mar/2015 13:25:03] "GET /show/?type=shoes HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 13:25:05] "GET / HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 13:25:06] "GET /show/?type=shoes HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 13:25:07] "GET /show/?type=pants HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 13:25:08] "GET /show/?type=tops HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 13:26:58] "GET / HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 13:26:59] "GET /show/?type=shoes HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 13:27:01] "GET /tips/ HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 13:27:03] "GET / HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 13:27:05] "GET /show/?type=tops HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 13:27:06] "GET /show/?type=pants HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 13:27:07] "GET /show/?type=shoes HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 13:27:12] "GET / HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 13:27:20] "GET / HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 13:27:23] "GET /show/?type=tops HTTP/1.1" 200 -
+124.205.76.255 - - [25/Mar/2015 13:27:25] "GET /show/?type=tops&random=0&page=1 HTTP/1.1" 200 -
